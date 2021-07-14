@@ -8,12 +8,13 @@
 				"preferred": ["brew"],
 				"brew": "brew install atom"
 			},
+			"install <pkg>": "apm install <pkg>",
 			"update": {
 				"preferred": ["brew", "apm"],
 				"builtin": "apm update",
 				"brew": "brew upgrade atom"
 			},
-			"upgrade all": ["apm upgrade"],
+			"upgrade all": "apm upgrade",
 			"upgrade <pkg>": "apm upgrade <pkg>"
 		},
 		"urls": {
@@ -28,13 +29,33 @@
 			"install": {
 				"brew": "brew install nvm node"
 			},
+			"install <pkg>": "npm install <pkg>",
 			"update": {
 				"preferred": ["nvm", "brew"],
 				"nvm": "nvm install --lts",
 				"brew": "brew upgrade node"
 			},
-			"upgrade all": ["npm install", "yarn install"],
+			"upgrade all": "npm update",
 			"upgrade <pkg>": "npm update <pkg>"
+		},
+		"urls": {
+			"standard": "https://www.npmjs.com/",
+			"docs": "https://docs.npmjs.com"
+		}
+	},
+	"yarn": {
+		"installed": false,
+		"enabled": true,
+		"commands": {
+			"install": {
+				"npm": "npm install --global yarn"
+			},
+			"install <pkg>": "yarn add <pkg>",
+			"update": {
+				"preferred": ["npm"],
+				"npm": "npm update --global yarn"
+			},
+			"upgrade all": "yarn upgrade"
 		},
 		"urls": {
 			"standard": "https://www.npmjs.com/",
@@ -48,11 +69,12 @@
 			"install": {
 				"shell": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
 			},
+			"install <pkg>": "brew install <pkg>",
 			"upgrade": {
 				"preferred": ["builtin"],
 				"builtin": "brew update"
 			},
-			"upgrade all": ["brew upgrade"],
+			"upgrade all": "brew upgrade",
 			"upgrade <pkg>": "brew update <pkg>"
 		},
 		"urls": {
@@ -67,6 +89,7 @@
 			"install": {
 				"brew": "brew install python"
 			},
+			"install <pkg>": "pip install <pkg>",
 			"upgrade": {
 				"preferred": ["brew", "builtin"],
 				"builtin": "pip install --upgrade pip"
@@ -82,11 +105,12 @@
 			"install": {
 				"brew": "brew install pmm"
 			},
+			"install <pkg>": "pmm install <pkg>",
 			"upgrade": {
 				"preferred": ["brew"],
-				"brew": "brew upgrade"
+				"brew": "brew upgrade pmm"
 			},
-			"upgrade all": ["pmm upgrade"],
+			"upgrade all": "pmm upgrade",
 			"upgrade <pkg>": "pmm update <pkg>"
 		},
 		"urls": {

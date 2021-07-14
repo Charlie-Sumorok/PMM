@@ -35,6 +35,10 @@
 								}
 							}
 						},
+						"install <pkg>": {
+							"description": "Command to install package",
+							"type": "string"
+						},
 						"update": {
 							"description": "Commands to upgrade package manager",
 							"type": "object",
@@ -49,8 +53,8 @@
 							}
 						},
 						"upgrade all": {
-							"description": "Commands to upgrade all packages",
-							"type": "array"
+							"description": "Command to upgrade all packages",
+							"type": "string"
 						},
 						"upgrade <pkg>": {
 							"description": "Command to upgrade package",
