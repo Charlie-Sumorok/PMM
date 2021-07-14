@@ -5,9 +5,14 @@
 		"enabled": true,
 		"commands": {
 			"install": {
+				"preferred": ["brew"],
 				"brew": "brew install atom"
 			},
-			"upgrade": "apm update"
+			"upgrade": {
+				"preferred": ["brew", "apm"],
+				"builtin": "apm update",
+				"brew": "brew upgrade atom"
+			}
 		},
 		"urls": {
 			"standard": "https://atom.io/",
@@ -21,7 +26,11 @@
 			"install": {
 				"brew": "brew install nvm node"
 			},
-			"upgrade": "nvm install --lts"
+			"upgrade": {
+				"preffered": ["nvm", "brew"],
+				"nvm": "nvm install --lts",
+				"brew": "brew upgrade node"
+			}
 		},
 		"urls": {
 			"standard": "https://www.npmjs.com/",
@@ -35,7 +44,10 @@
 			"install": {
 				"shell": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
 			},
-			"upgrade": "brew update"
+			"upgrade": {
+				"preferred": ["builtin"],
+				"builtin": "brew update"
+			}
 		},
 		"urls": {
 			"standard": "https://brew.sh",
@@ -49,7 +61,25 @@
 			"install": {
 				"brew": "brew install python"
 			},
-			"upgrade": "pip install --upgrade pip"
+			"upgrade": {
+				"preferred": ["brew", "builtin"],
+				"builtin": "pip install --upgrade pip"
+			}
+		},
+		"urls": {
+			"standard": "https://pypi.org/",
+			"docs": "https://docs.python.org/"
+		}
+	},
+	"pmm": {
+		"commands": {
+			"install": {
+				"brew": "brew install pmm"
+			},
+			"upgrade": {
+				"preferred": ["brew"],
+				"brew": "brew upgrade"
+			}
 		},
 		"urls": {
 			"standard": "https://pypi.org/",

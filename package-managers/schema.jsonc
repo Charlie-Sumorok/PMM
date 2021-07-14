@@ -23,17 +23,30 @@
 				"commands": {
 					"properties": {
 						"install": {
-							"description": "installation method",
+							"description": "installation methods",
 							"type": "object",
 							"patternProperties": {
+								"preferred": {
+									"description": "sorted methods",
+									"type": "array"
+								},
 								"^[a-zA-Z]+$": {
 									"type": "string"
 								}
 							}
 						},
 						"upgrade": {
-							"description": "Command to upgrade package manager",
-							"type": "string"
+							"description": "Commands to upgrade package manager",
+							"type": "object",
+							"patternProperties": {
+								"preferred": {
+									"description": "sorted methods",
+									"type": "array"
+								},
+								"^[a-zA-Z]+$": {
+									"type": "string"
+								}
+							}
 						}
 					},
 					"required": ["install", "upgrade"]
