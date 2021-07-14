@@ -35,7 +35,7 @@
 								}
 							}
 						},
-						"upgrade": {
+						"update": {
 							"description": "Commands to upgrade package manager",
 							"type": "object",
 							"patternProperties": {
@@ -47,6 +47,14 @@
 									"type": "string"
 								}
 							}
+						},
+						"upgrade all": {
+							"description": "Commands to upgrade all packages",
+							"type": "array"
+						},
+						"upgrade <pkg>": {
+							"description": "Command to upgrade package",
+							"type": "string"
 						}
 					},
 					"required": ["install", "upgrade"]
