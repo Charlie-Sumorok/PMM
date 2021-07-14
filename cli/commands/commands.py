@@ -46,13 +46,13 @@ commands_info = {
 		# --manager <Package Manager> | -m <Package Manager> | <Package Name>
 	"enable": "enable a package manager for searching",
 	"disable": "disable a package manager for searching",
-	"repo": "Go to the repo of PMM or a specified package manager",
+	"repo": "Go to the repo of PMM or a specified package manager or package",
 	"config": "view or modifiy settings",
 	"commands": "list all commands",
 	"completion": "get shell completion",
 	"cmds": "alias of commands",
 	# "show": "show package manager on PMM website",
-	"": "Package Manager Manager",
+	# "": "Package Manager Manager",
 }
 
 def parse_args(args: list[str]):
