@@ -1,6 +1,6 @@
 {
-	"name": "ppm",
-	"productName": "PPM",
+	"name": "pmm",
+	"productName": "PMM",
 	"version": "0.1.0",
 	"description": "A package manager for package managers",
 	"license": "SEE LICENCE IN LICENCE",
