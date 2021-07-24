@@ -12,8 +12,8 @@ def parse_args(args):
 		url = 'https://github.com/Charlie-Sumorok/PMM'
 	else:
 		package_manager_name = args[0]
-		url = 'https://raw.githubusercontent.com/Charlie-Sumorok/PMM/main/package-managers/data.json'
-		package_manager_data = requests.get(url).json()
+		data_url = 'https://raw.githubusercontent.com/Charlie-Sumorok/PMM/main/package-managers/data.json'
+		package_manager_data = requests.get(data_url).json()
 		package_manager = package_manager_data[package_manager_name]
 		urls = package_manager['urls']
 		url = urls['standard']
