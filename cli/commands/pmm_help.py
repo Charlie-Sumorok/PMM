@@ -4,13 +4,13 @@
 
 import re
 
-from . import commands
+from .commands import  commands_info
 
 
 def parse_args(args):
 	'parse arguments'
 	if re.search('^([a-zA-Z]+)?$', args[0]):
-		print(commands.commands_info[args[0]])
+		print(commands_info[args[0]])
 
 #print(cli_docs)
 options = {
