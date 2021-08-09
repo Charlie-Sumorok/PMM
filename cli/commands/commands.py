@@ -42,7 +42,7 @@ commands_info = {
 	"docs": "Go to docs for PMM or a specified package manager",
 	"login": "log in to GitHub to create the pull request",
 	"logout": "log out of GitHub",
-	"search": "search for available package managers or packages",
+	"search": "search for available packages",
 		# --manager <Package Manager> | -m <Package Manager> | <Package Name>
 	"enable": "enable a package manager for searching",
 	"disable": "disable a package manager for searching",
