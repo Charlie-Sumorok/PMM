@@ -4,8 +4,7 @@ on:
   push:
   pull_request:
   schedule:
-    # Once every 23 hours and 59 minutes
-    - cron: '*/59 */23 * * *'
+    - cron: '0 20 * * *'
   workflow_dispatch:
 
 jobs:
