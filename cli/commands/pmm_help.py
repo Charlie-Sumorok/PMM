@@ -4,7 +4,7 @@
 
 import re
 
-from .commands import  commands_info
+from commands.commands import  commands_info
 
 
 def parse_args(args):
