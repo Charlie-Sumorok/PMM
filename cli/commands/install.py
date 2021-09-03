@@ -26,7 +26,7 @@ def parse_args(args):
     url = "https://raw.githubusercontent.com/Charlie-Sumorok/PMM/main/package-managers/data.json"
     package_manager_data = requests.get(url).json()
     package_manager = package_manager_data[package_manager_name]
-    with open(get_settings_path(platform), "r+") as settings:
+    with open(get_settings_path(platform), "r+t") as settings:
         old_settings_data = json.loads(settings.read())
         shell(
             package_manager["commands"]["install"][old_settings_data["package_manager"]]
