@@ -50,4 +50,5 @@ def get_npm_info(
 	if registry_url == 'auto':
 		registry_url = 'https://registry.npmjs.com'
 	response = requests.get(f'{registry_url}/{package}')
+	return response.json()
 
