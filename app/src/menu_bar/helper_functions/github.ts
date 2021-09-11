@@ -1,12 +1,6 @@
-import { openUrlMenuItem } from 'electron-util';
+import { is, openUrlMenuItem } from 'electron-util';
 
-export const form_query = (obj: any) => {
-	let query = '';
-	for (const key in obj) {
-		query += `${key}=${obj[key]}`;
-	}
-	return query;
-};
+import { form_query } from '.';
 
 export class GitHubRepo {
 	owner = '';
@@ -49,19 +43,9 @@ export class GitHubIssue {
 }
 
 export const get_issue_url = (repo: GitHubRepo, issue: GitHubIssue) => {
-	const { owner, name: repo_name } = repo;
-	const { assignees, labels, template, title } = issue;
-	const metadata_labels = [
-		`assignees=${assignees}`,
-		`labels=${labels}`,
-		`template=${template}`,
-		`title=${title}`,
-	];
-	const [assignees_input, labels_input, template_input, title_input] =
-		metadata_labels;
-	const metadata = form_query;
-
-	const issue_url = `https://github.com/${owner}/${repo_name}/issues/new?${metadata}`;
+	const issue_properties = new Map(Object.entries(issue));
+	const query = form_query(issue_properties);
+	const issue_url = `https://github.com/${repo.owner}/${repo.name}/issues/new?${query}`;
 	return issue_url;
 };
 
