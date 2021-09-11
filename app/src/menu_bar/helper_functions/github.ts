@@ -1,49 +1,55 @@
 import { openUrlMenuItem } from 'electron-util';
 
-class GitHubRepo {
+export const form_query = (obj: any) => {
+	let query = '';
+	for (const key in obj) {
+		query += `${key}=${obj[key]}`;
+	}
+	return query;
+};
+
+export class GitHubRepo {
 	owner = '';
-	repo_name = '';
+	name = '';
 	url? = '';
-	constructor(metadata: GitHubRepo) {
-		const { owner, repo_name, url } = metadata;
-		this.owner = owner;
-		this.repo_name = repo_name;
-		this.url = url ?? `https://github.com/${owner}/${repo_name}`;
+	constructor(repo: GitHubRepo) {
+		this.owner = repo.owner;
+		this.name = repo.name;
+		this.url = repo.url ?? `https://github.com/${repo.owner}/${repo.name}`;
 	}
 }
 
-const gitHubRepo_MenuBar_Item = ({
+export const gitHubRepo_MenuBar_Item = ({
 	label,
 	repo,
 }: {
 	label: string;
 	repo: GitHubRepo;
 }) => {
-	const { owner, repo_name, url } = repo;
+	const { owner, name, url } = repo;
 
 	return openUrlMenuItem({
 		label,
-		url: url ?? `https://github.com/${owner}/${repo_name}`,
+		url: url ?? `https://github.com/${owner}/${name}`,
 	});
 };
 
-class GitHubIssue {
+export class GitHubIssue {
 	assignees?: string = '';
 	labels?: string = '';
 	template?: string = '';
 	title?: string = '';
 
-	constructor(metadata: GitHubIssue) {
-		const { assignees, labels, template, title } = metadata;
-		this.assignees = assignees;
-		this.labels = labels;
-		this.template = template;
-		this.title = title;
+	constructor(issue: GitHubIssue) {
+		this.assignees = issue.assignees;
+		this.labels = issue.labels;
+		this.template = issue.template;
+		this.title = issue.title;
 	}
 }
 
-const get_issue_url = (repo: GitHubRepo, issue: GitHubIssue) => {
-	const { owner, repo_name } = repo;
+export const get_issue_url = (repo: GitHubRepo, issue: GitHubIssue) => {
+	const { owner, name: repo_name } = repo;
 	const { assignees, labels, template, title } = issue;
 	const metadata_labels = [
 		`assignees=${assignees}`,
@@ -53,7 +59,7 @@ const get_issue_url = (repo: GitHubRepo, issue: GitHubIssue) => {
 	];
 	const [assignees_input, labels_input, template_input, title_input] =
 		metadata_labels;
-	const metadata = `${assignees_input}&${labels_input}&${template_input}&${title_input}`;
+	const metadata = form_query;
 
 	const issue_url = `https://github.com/${owner}/${repo_name}/issues/new?${metadata}`;
 	return issue_url;
@@ -66,18 +72,10 @@ interface IssueTemplate_MenuBar {
 	issue: GitHubIssue;
 }
 
-const gitHubIssueFromTemplate = (template: IssueTemplate_MenuBar) => {
+export const gitHubIssueFromTemplate = (template: IssueTemplate_MenuBar) => {
 	const { label, repo, issue } = template;
 	return openUrlMenuItem({
 		label,
 		url: get_issue_url(repo, issue),
 	});
-};
-
-export {
-	gitHubRepo_MenuBar_Item,
-	get_issue_url,
-	GitHubRepo,
-	GitHubIssue,
-	gitHubIssueFromTemplate,
 };
