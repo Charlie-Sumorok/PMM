@@ -20,7 +20,7 @@ data_urls = {
 			}
 		},
 		'Linux': {
-			'formula': 'https://formulae.brew.sh/api/formula-linux/{name}.json'
+			'formula': 'https://formulae.brew.sh/api/formula-linux/{name}.json',
 			'cask': 'https://formulae.brew.sh/api/cask/{name}.json',
 			'analytics': {
 				'one-category': 'https://formulae.brew.sh/api/analytics-linux/{category}/{days}.json',
