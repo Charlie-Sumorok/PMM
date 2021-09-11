@@ -1,4 +1,4 @@
-import { is, openUrlMenuItem } from 'electron-util';
+import { openUrlMenuItem } from 'electron-util';
 
 import { form_query } from '.';
 
