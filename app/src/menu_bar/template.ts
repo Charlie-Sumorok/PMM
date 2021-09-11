@@ -1,16 +1,17 @@
+import path from 'path';
+
+import { app, shell } from 'electron';
+import { aboutMenuItem, appMenu, is, platform } from 'electron-util';
+
+import { storage } from '../config';
+import { showPreferences } from '../preferences';
 import {
 	GitHubIssue,
 	GitHubRepo,
 	gitHubIssueFromTemplate,
 	gitHubRepo_MenuBar_Item,
 } from './helper_functions/github';
-import { aboutMenuItem, appMenu, is, platform } from 'electron-util';
-import { app, shell } from 'electron';
-
 import { SubMenu } from './helper_functions/menus';
-import path from 'path';
-import { showPreferences } from '../preferences';
-import { storage } from '../config';
 
 const main_repo: GitHubRepo = {
 	owner: 'Charlie-Sumorok',
