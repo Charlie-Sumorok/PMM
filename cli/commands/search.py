@@ -6,29 +6,36 @@ import os
 import json
 import requests
 
+BREW_API_BASE = "https://formulae.brew.sh/api"
+
 data_urls = {
     "brew": {
         "macOS": {
-            "formula": "https://formulae.brew.sh/api/formula/{name}.json",
-            "cask": "https://formulae.brew.sh/api/cask/{name}.json",
+            "formula": BREW_API_BASE + "/formula/{name}.json",
+            "cask": BREW_API_BASE + "/cask/{name}.json",
             "analytics": {
-                "one-category": "https://formulae.brew.sh/api/analytics/{category}/{days}.json",
+                "one-category": BREW_API_BASE + "/analytics/{category}/{days}.json",
                 "all": {
-                    "all": "https://formulae.brew.sh/api/analytics/{category}/{repo}/{days}.json",
-                    "core": "https://formulae.brew.sh/api/analytics/{category}/homebrew-core/{days}.json",
-                    "cask": "https://formulae.brew.sh/api/analytics/{category}/homebrew-cask/{days}.json",
+                    "all": BREW_API_BASE + "/analytics/{category}/{repo}/{days}.json",
+                    "core": BREW_API_BASE
+                    + "/analytics/{category}/homebrew-core/{days}.json",
+                    "cask": BREW_API_BASE
+                    + "/analytics/{category}/homebrew-cask/{days}.json",
                 },
             },
         },
         "Linux": {
-            "formula": "https://formulae.brew.sh/api/formula-linux/{name}.json",
-            "cask": "https://formulae.brew.sh/api/cask/{name}.json",
+            "formula": BREW_API_BASE + "/formula-linux/{name}.json",
+            "cask": BREW_API_BASE + "/cask/{name}.json",
             "analytics": {
-                "one-category": "https://formulae.brew.sh/api/analytics-linux/{category}/{days}.json",
+                "one-category": BREW_API_BASE
+                + "/analytics-linux/{category}/{days}.json",
                 "all": {
-                    "all": "https://formulae.brew.sh/api/analytics/{category}/{repo}/{days}.json",
-                    "core": "https://formulae.brew.sh/api/analytics/{category}/linuxbrew-core/{days}.json",
-                    "cask": "https://formulae.brew.sh/api/analytics/{category}/homebrew-cask/{days}.json",
+                    "all": BREW_API_BASE + "/analytics/{category}/{repo}/{days}.json",
+                    "core": BREW_API_BASE
+                    + "/analytics/{category}/linuxbrew-core/{days}.json",
+                    "cask": BREW_API_BASE
+                    + "/analytics/{category}/homebrew-cask/{days}.json",
                 },
             },
         },
