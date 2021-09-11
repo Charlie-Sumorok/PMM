@@ -15,7 +15,7 @@ import { SubMenu } from './helper_functions/menus';
 
 const main_repo: GitHubRepo = {
 	owner: 'Charlie-Sumorok',
-	repo_name: 'ppm',
+	name: 'ppm',
 };
 
 const feature_request = new GitHubIssue({
