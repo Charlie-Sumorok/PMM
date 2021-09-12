@@ -1,5 +1,4 @@
 import { BrowserWindow } from 'electron';
-import path from 'node:path';
 
 const showPreferences = async () => {
 	const win = new BrowserWindow({
@@ -18,9 +17,7 @@ const showPreferences = async () => {
 		win.show();
 	});
 
-	await win.loadFile(
-		path.join(__dirname, '../../../views/', 'preferences.html')
-	);
+	await win.loadFile('../views/preferences.html');
 
 	return win;
 };

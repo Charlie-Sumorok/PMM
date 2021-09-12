@@ -3,7 +3,6 @@ import contextMenu from 'electron-context-menu';
 import unhandled from 'electron-unhandled';
 /// import { autoUpdater } from 'electron-updater';
 import { is } from 'electron-util';
-import path from 'node:path';
 
 import { menu } from './menu_bar';
 
@@ -51,7 +50,7 @@ const createMainWindow = async () => {
 		mainWindow = undefined;
 	});
 
-	await win.loadFile(path.join(__dirname, '../views/', 'index.html'));
+	await win.loadFile('../views/index.html');
 
 	return win;
 };
