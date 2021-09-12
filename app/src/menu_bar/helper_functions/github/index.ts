@@ -1,6 +1,6 @@
 import { openUrlMenuItem } from 'electron-util';
 
-import { form_query } from '.';
+import { form_query } from 'urls';
 
 export class GitHubRepo {
 	owner = '';
