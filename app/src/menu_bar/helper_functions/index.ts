@@ -1,9 +1,9 @@
 export const form_query = (query_map: Map<string, string>) => {
-	let query = '';
+	let query: string[] = [];
 	query_map.forEach((key: string) => {
-		query += `${key}=${query_map.get(key)}`;
+		query.push(`${key}=${query_map.get(key)}`);
 	});
-	return query;
+	return query.join('&');
 };
 
 export * as github from './github';
