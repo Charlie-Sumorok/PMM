@@ -1,6 +1,5 @@
-import path from 'path';
-
 import { BrowserWindow } from 'electron';
+import path from 'node:path';
 
 const showPreferences = async () => {
 	const win = new BrowserWindow({

@@ -1,7 +1,6 @@
-import path from 'path';
-
 import { app, shell } from 'electron';
 import { aboutMenuItem, appMenu, is, platform } from 'electron-util';
+import path from 'node:path';
 
 import { storage } from '../config';
 import { showPreferences } from '../preferences';
