@@ -1,6 +1,5 @@
 import { app, shell } from 'electron';
 import { aboutMenuItem, appMenu, is, platform } from 'electron-util';
-import path from 'node:path';
 
 import { storage } from '../config';
 import { showPreferences } from '../preferences';
@@ -59,7 +58,7 @@ if (!is.macos) {
 			type: 'separator',
 		},
 		aboutMenuItem({
-			icon: path.join(__dirname, '../../icons', 'icon.png'),
+			icon: '../../icons/icon.png',
 			text: 'Created by {Your Name}',
 		})
 	);
