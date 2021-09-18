@@ -37,4 +37,5 @@ def parse_args(args):
             )
 
 
-parse_args(sys.argv[1:])
+if __name__ == "__main__":
+    parse_args(sys.argv[1:])
