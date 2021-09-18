@@ -50,10 +50,10 @@
 		</td>
 		<td>
 			<a
-				href="https://github.com/Charlie-Sumorok/pmm/actions/workflows/App-Ci.yml"
+				href="https://github.com/Charlie-Sumorok/pmm/actions/workflows/Electron-App-Ci.yml"
 				title="App CI">
 				<img
-					src="https://github.com/Charlie-Sumorok/pmm/actions/workflows/App-Ci.yml/badge.svg"
+					src="https://github.com/Charlie-Sumorok/pmm/actions/workflows/Electron-App-Ci.yml/badge.svg"
 					alt="App-CI"
 				/>
 			</a>
