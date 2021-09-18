@@ -60,7 +60,7 @@ commands_info = {
 }
 
 
-def parse_args(args: list[str]):
+def parse_args(args: list[str], fail: bool = False):
     "parse arguments"
     verbose_flags = ["-v", "--verbose"]
     no_verbose_flags = ["-nv", "--no-verbose"]
@@ -102,12 +102,11 @@ def parse_args(args: list[str]):
 		}"""
         )
     elif (len(args) > 0) and max_verbose_flags > max_no_verbose_flags:
-        print(" ".join(commands_info.keys()))
+        message = " ".join(commands_info.keys())
     elif (len(args) == 0) or max_verbose_flags < max_no_verbose_flags:
-        print(
-            "\n".join(
-                [
-                    f"""{
+        message = "\n".join(
+            [
+                f"""{
 				colorama.Style.BRIGHT
 			}{
 				command_name
@@ -120,7 +119,12 @@ def parse_args(args: list[str]):
 			}{
 				colorama.Fore.RESET
 			}"""
-                    for command_name, command_info in commands_info.items()
-                ]
-            )
+                for command_name, command_info in commands_info.items()
+            ]
         )
+    else:
+        message = ""
+    if fail:
+        sys.exit(message)
+    else:
+        print(message)

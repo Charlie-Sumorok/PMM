@@ -4,12 +4,14 @@
 
 import re
 
-from commands.commands import commands_info
+from commands.commands import commands_info, parse_args as parse_commands_args
 
 
 def parse_args(args):
     "parse arguments"
-    if re.search("^([a-zA-Z]+)?$", args[0]):
+    if args == []:
+        parse_commands_args(args=[], fail=True)
+    elif re.search("^([a-zA-Z]+)?$", args[0]):
         print(commands_info[args[0]])
 
 

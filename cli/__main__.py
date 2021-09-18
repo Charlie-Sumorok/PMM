@@ -12,7 +12,7 @@ colorama.init(autoreset=True)
 def parse_args(args):
     "parse arguments"
     if len(args) == 0:
-        commands.pmm_help.parse_args([""])
+        commands.pmm_help.parse_args([])
     else:
         command, *subcommand_args = args
         if command in ["commands", "cmds"]:
