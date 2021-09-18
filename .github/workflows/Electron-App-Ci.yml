@@ -1,4 +1,4 @@
-name: App CI
+name: Electron App CI
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
       - name: Complie TypeScript
         run: tsc
       - name: Test
-        run: npm run test
+        run: npm test
       - name: Compile SCSS
         run: npx sass styles/scss:styles/css
-        working-directory: app
+        working-directory: app/electron
