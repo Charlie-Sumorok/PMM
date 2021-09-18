@@ -28,7 +28,7 @@
 		"start": "electron ./app/out/index.js",
 		"pack": "electron-builder --dir",
 		"dist": "electron-builder --macos --linux --windows",
-		"release": "np",
+		"release": "np"
 	},
 	"dependencies": {
 		"concurrently": "^6.2.1",
