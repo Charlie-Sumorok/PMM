@@ -62,7 +62,6 @@ jobs:
       - name: Test Commands
         run: |
           alias pmm='python3 cli'
-          for command in $(pmm commands --verbose)
-          do
+          for command in $(pmm commands --verbose); do
             pmm $command
           done
