@@ -17,7 +17,9 @@
 	},
 	"private": true,
 	"scripts": {
-		"postinstall": "electron-builder install-app-deps",
+		"postinstall:app": "electron-builder install-app-deps",
+		"postinstall:styles": "sass app/electron/styles/scss:app/electron/styles/css",
+		"postinstall": "npm run postinstall:styles && npm run postinstall:app",
 		"lint": "xo app/electron/src",
 		"test": "npm run lint",
 		"dev:app": "tsc --watch",
