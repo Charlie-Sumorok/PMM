@@ -61,8 +61,7 @@
 			"@typescript-eslint/no-var-requires": 0,
 			"@typescript-eslint/object-curly-spacing": 0,
 			"@typescript-eslint/restrict-template-expressions": 0,
-			"@typescript-eslint/consistent-indexed-object-style": 0,
-			"unicorn/prefer-node-protocol": 0
+			"@typescript-eslint/consistent-indexed-object-style": 0
 		}
 	},
 	"np": {
