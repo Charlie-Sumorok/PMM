@@ -1,6 +1,6 @@
 import Store from 'electron-store';
 
-const storage = new Store({
+export const storage = new Store({
 	defaults: {
 		package_managers: {
 			apm: false,
@@ -11,4 +11,3 @@ const storage = new Store({
 	},
 });
 
-export { storage };

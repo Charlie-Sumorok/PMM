@@ -1,6 +1,6 @@
 import { BrowserWindow } from 'electron';
 
-const showPreferences = async () => {
+export const showPreferences = async () => {
 	const win = new BrowserWindow({
 		title: 'Preferences',
 		show: false,
@@ -22,4 +22,3 @@ const showPreferences = async () => {
 	return win;
 };
 
-export { showPreferences };

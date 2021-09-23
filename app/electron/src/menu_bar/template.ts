@@ -187,4 +187,12 @@ if (is.development) {
 	});
 }
 
-export { template };
+export {
+	main_repo,
+	bug_report,
+	feature_request,
+	helpSubmenu,
+	debugSubmenu,
+	macosTemplate,
+	otherTemplate,
+};
