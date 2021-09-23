@@ -193,6 +193,7 @@ export {
 	feature_request,
 	helpSubmenu,
 	debugSubmenu,
+	template,
 	macosTemplate,
 	otherTemplate,
 };
