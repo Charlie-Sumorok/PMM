@@ -1,6 +1,6 @@
 import { openUrlMenuItem } from 'electron-util';
 
-import { form_query } from './urls';
+import { formQuery } from './urls';
 
 export class GitHubRepo {
 	owner = '';
@@ -13,7 +13,7 @@ export class GitHubRepo {
 	}
 }
 
-export const gitHubRepo_MenuBar_Item = ({
+export const githubRepoMenuBarItem = ({
 	label,
 	repo,
 }: {
@@ -28,6 +28,11 @@ export const gitHubRepo_MenuBar_Item = ({
 	});
 };
 
+export const urlQuote = (url: string) => {
+	const words = url.split(' ');
+	return words.join('+');
+};
+
 export class GitHubIssue {
 	assignees?: string = '';
 	labels?: string = '';
@@ -35,31 +40,31 @@ export class GitHubIssue {
 	title?: string = '';
 
 	constructor(issue: GitHubIssue) {
-		this.assignees = issue.assignees;
-		this.labels = issue.labels;
-		this.template = issue.template;
-		this.title = issue.title;
+		this.assignees = urlQuote(issue.assignees ?? '');
+		this.labels = urlQuote(issue.labels ?? '');
+		this.template = urlQuote(issue.template ?? '');
+		this.title = urlQuote(issue.title ?? '');
 	}
 }
 
-export const get_issue_url = (repo: GitHubRepo, issue: GitHubIssue) => {
-	const issue_properties = new Map(Object.entries(issue));
-	const query = form_query(issue_properties);
-	const issue_url = `https://github.com/${repo.owner}/${repo.name}/issues/new?${query}`;
-	return issue_url;
+export const getIssueUrl = (repo: GitHubRepo, issue: GitHubIssue) => {
+	const issueProperties = new Map(Object.entries(issue));
+	const query = formQuery(issueProperties);
+	const issueUrl = `https://github.com/${repo.owner}/${repo.name}/issues/new?${query}`;
+	return issueUrl;
 };
 
-interface IssueTemplate_MenuBar {
+interface IssueTemplateMenuBar {
 	label: string;
 
 	repo: GitHubRepo;
 	issue: GitHubIssue;
 }
 
-export const gitHubIssueFromTemplate = (template: IssueTemplate_MenuBar) => {
+export const gitHubIssueFromTemplate = (template: IssueTemplateMenuBar) => {
 	const { label, repo, issue } = template;
 	return openUrlMenuItem({
 		label,
-		url: get_issue_url(repo, issue),
+		url: getIssueUrl(repo, issue),
 	});
 };
