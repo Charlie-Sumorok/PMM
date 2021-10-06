@@ -7,48 +7,48 @@ import {
 	GitHubIssue,
 	GitHubRepo,
 	gitHubIssueFromTemplate,
-	gitHubRepo_MenuBar_Item,
+	githubRepoMenuBarItem,
 } from './helper_functions/github';
 import { SubMenu } from './helper_functions/menus';
 
-const main_repo: GitHubRepo = {
+const mainRepo: GitHubRepo = {
 	owner: 'Charlie-Sumorok',
-	name: 'ppm',
+	name: 'PMM',
 };
 
-const feature_request = new GitHubIssue({
+const featureRequest = new GitHubIssue({
 	labels: 'enhancement',
 	template: 'feature-request.md',
-	title: 'Add+Feature',
+	title: 'Add Feature',
 });
 
-const bug_report = new GitHubIssue({
+const bugReport = new GitHubIssue({
 	labels: 'bug',
 	template: 'bug-report.md',
-	title: 'Bug+Report',
+	title: 'Bug Report',
 });
 
 const helpSubmenu: SubMenu = [
-	gitHubRepo_MenuBar_Item({
+	githubRepoMenuBarItem({
 		label: 'Website',
-		repo: main_repo,
+		repo: mainRepo,
 	}),
-	gitHubRepo_MenuBar_Item({
+	githubRepoMenuBarItem({
 		label: 'Source Code',
-		repo: main_repo,
+		repo: mainRepo,
 	}),
 	{
 		type: 'separator',
 	},
 	gitHubIssueFromTemplate({
 		label: 'Report an Issue …',
-		repo: main_repo,
-		issue: bug_report,
+		repo: mainRepo,
+		issue: bugReport,
 	}),
 	gitHubIssueFromTemplate({
 		label: 'Feature Request',
-		repo: main_repo,
-		issue: feature_request,
+		repo: mainRepo,
+		issue: featureRequest,
 	}),
 ];
 
@@ -188,9 +188,9 @@ if (is.development) {
 }
 
 export {
-	main_repo,
-	bug_report,
-	feature_request,
+	mainRepo as main_repo,
+	bugReport as bug_report,
+	featureRequest as feature_request,
 	helpSubmenu,
 	debugSubmenu,
 	template,

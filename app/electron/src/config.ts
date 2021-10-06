@@ -2,7 +2,7 @@ import Store from 'electron-store';
 
 export const storage = new Store({
 	defaults: {
-		package_managers: {
+		packageManagers: {
 			apm: false,
 			npm: false,
 			brew: false,
@@ -10,4 +10,3 @@ export const storage = new Store({
 		},
 	},
 });
-
