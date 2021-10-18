@@ -43,7 +43,7 @@
 		"typescript": "^4.4.4"
 	},
 	"devDependencies": {
-		"@types/node": "^16.11.0",
+		"@types/node": "^16.11.1",
 		"electron": "^15.2.0",
 		"electron-builder": "^22.13.1",
 		"np": "^7.5.0",
