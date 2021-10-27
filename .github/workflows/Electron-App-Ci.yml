@@ -12,12 +12,20 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Setup Node.js
         uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - name: Setup node_modules/
         run: npm ci
       - name: Lint
@@ -28,12 +36,20 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - name: Setup Terminal
+      - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Setup Node.js
         uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - name: Setup node_modules/
         run: npm ci
       - name: Complie TypeScript
