@@ -24,7 +24,7 @@
 		"test": "npm run lint",
 		"dev:app": "tsc --watch",
 		"dev:styles": "sass --watch app/electron/styles/scss:app/electron/styles/css",
-		"dev": "concurrently 'npm run dev:app' 'npm run dev:styles' --names 'typescript,scss' --prefix-colors",
+		"dev": "concurrently 'npm:dev:app' 'npm:dev:styles' --names 'typescript,scss' --prefix-colors",
 		"test_app": "npm start & sleep 10",
 		"posttest_app": "killall node",
 		"start": "electron ./app/electron/out/index.js",
@@ -33,21 +33,21 @@
 		"release": "np"
 	},
 	"dependencies": {
-		"concurrently": "^6.3.0",
 		"electron-context-menu": "^3.1.1",
 		"electron-debug": "^3.0.0",
 		"electron-store": "^8.0.1",
 		"electron-unhandled": "^3.0.0",
 		"electron-updater": "^4.3.9",
-		"electron-util": "^0.17.2",
-		"typescript": "^4.4.4"
+		"electron-util": "^0.17.2"
 	},
 	"devDependencies": {
 		"@types/node": "^16.11.6",
+		"concurrently": "^6.3.0",
 		"electron": "^15.3.0",
 		"electron-builder": "^22.13.1",
 		"np": "^7.5.0",
 		"sass": "^1.43.4",
+		"typescript": "^4.4.4",
 		"xo": "^0.45.0"
 	},
 	"xo": {
