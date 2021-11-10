@@ -41,7 +41,7 @@
 		"electron-util": "^0.17.2"
 	},
 	"devDependencies": {
-		"@types/node": "^16.11.6",
+		"@types/node": "^16.11.7",
 		"concurrently": "^6.3.0",
 		"electron": "^15.3.0",
 		"electron-builder": "^22.13.1",
