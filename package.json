@@ -37,7 +37,7 @@
 		"electron-debug": "^3.0.0",
 		"electron-store": "^8.0.1",
 		"electron-unhandled": "^3.0.0",
-		"electron-updater": "^4.3.9",
+		"electron-updater": "^4.6.1",
 		"electron-util": "^0.17.2"
 	},
 	"devDependencies": {
