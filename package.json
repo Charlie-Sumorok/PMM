@@ -37,13 +37,13 @@
 		"electron-debug": "^3.0.0",
 		"electron-store": "^8.0.1",
 		"electron-unhandled": "^3.0.0",
-		"electron-updater": "^4.3.9",
+		"electron-updater": "^4.6.1",
 		"electron-util": "^0.17.2"
 	},
 	"devDependencies": {
 		"@types/node": "^16.11.10",
-		"concurrently": "^6.3.0",
-		"electron": "^15.3.0",
+		"concurrently": "^6.4.0",
+		"electron": "^16.0.2",
 		"electron-builder": "^22.13.1",
 		"np": "^7.5.0",
 		"sass": "^1.43.4",
