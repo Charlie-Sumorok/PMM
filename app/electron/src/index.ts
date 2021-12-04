@@ -4,7 +4,7 @@ import unhandled from 'electron-unhandled';
 /// import { autoUpdater } from 'electron-updater';
 import { is } from 'electron-util';
 
-import { menu } from './menu_bar';
+import { menu } from './menu_bar/index';
 
 unhandled();
 // TMP debug();
