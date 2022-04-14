@@ -43,7 +43,7 @@
 	"devDependencies": {
 		"@types/node": "^17.0.23",
 		"concurrently": "^7.1.0",
-		"electron": "^18.0.3",
+		"electron": "^18.0.4",
 		"electron-builder": "^23.0.3",
 		"np": "^7.6.1",
 		"sass": "^1.50.0",
