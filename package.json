@@ -42,7 +42,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^20.11.20",
-		"concurrently": "^7.3.0",
+		"concurrently": "^8.2.2",
 		"electron": "^29.0.1",
 		"electron-builder": "^23.6.0",
 		"np": "^9.2.0",
