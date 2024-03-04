@@ -44,7 +44,7 @@
 		"@types/node": "^20.11.20",
 		"concurrently": "^7.3.0",
 		"electron": "^29.0.1",
-		"electron-builder": "^23.6.0",
+		"electron-builder": "^24.13.3",
 		"np": "^9.2.0",
 		"sass": "^1.71.1",
 		"typescript": "^4.7.4",
